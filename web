@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoTect Landscape | Jardinería Profesional en Miami</title>
+  <meta name="description" content="Servicios profesionales de jardinería, paisajismo y mantenimiento de áreas verdes en Miami. Pide tu presupuesto sin compromiso.">
+  <meta name="keywords" content="jardinería, paisajismo, mantenimiento de jardines, Miami, césped, podas, riego automático">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2909/2909769.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #237a57;
+      --primary-dark: #17523e;
+      --accent: #ffd600;
+      --bg: #f8f9fa;
+      --text: #212529;
+      --radius: 12px;
+      --max: 1200px;
+      --shadow: 0 6px 24px 0 rgba(60,72,88,.09);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Roboto', Arial, sans-serif; }
+    body { font-size: 18px; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      padding: 0;
+    }
+    .navbar {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 18px 0 18px;
+    }
+    .logo img { height: 60px; }
+    nav a {
+      color: #fff;
+      font-weight: 700;
+      margin-left: 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 19px;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 90px 10px 120px;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(33,122,87,0.60);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.35rem;
+      margin-bottom: 30px;
+      color: #e9ffe1;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: var(--primary-dark);
+      padding: 16px 32px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 12px rgba(60,72,88,.11);
+      transition: background .2s;
+    }
+    .cta-btn:hover { background: #fff066; }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 60px 18px 40px;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      color: var(--primary-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .section-desc {
+      text-align: center;
+      color: #333;
+      margin-bottom: 35px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      text-align: center;
+      transition: transform .18s;
+    }
+    .service-card:hover { transform: translateY(-7px) scale(1.03); }
+    .service-card img { width: 100%; max-width: 220px; border-radius: 10px; margin-bottom: 13px; }
+    .service-card h3 { margin: 0 0 8px; color: var(--primary); font-family: 'Montserrat', sans-serif; font-size: 1.3rem;}
+    .service-card p { margin: 0; font-size: 1rem; color: #444; }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    .about img { max-width: 350px; width: 100%; border-radius: 15px; }
+    .about-text { flex: 1 1 350px; }
+    .about-text h2 { color: var(--primary-dark); font-size: 2rem; }
+    .about-text p { color: #444; font-size: 1.1rem; }
+
+    .testimonials {
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 22px 12px;
+      margin-bottom: 50px;
+    }
+    .testimonials-title {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .testimonials-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 38px;
+      justify-content: center;
+    }
+    .testimonial {
+      background: #fff;
+      color: var(--primary-dark);
+      border-radius: 10px;
+      padding: 18px 16px 10px;
+      max-width: 320px;
+      min-width: 260px;
+      box-shadow: 0 2px 8px rgba(33,122,87,0.07);
+      font-size: 1rem;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 2.5rem;
+      color: var(--accent);
+      position: absolute;
+      left: 11px; top: 3px;
+      font-style: normal;
+      font-family: serif;
+    }
+    .testimonial .author {
+      font-weight: bold;
+      font-style: normal;
+      margin-top: 9px;
+      color: var(--primary);
+      display: block;
+    }
+
+    .gallery {
+      margin-bottom: 48px;
+    }
+    .gallery-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+      gap: 16px;
+    }
+    .gallery-list img {
+      width: 100%;
+      border-radius: 9px;
+      box-shadow: 0 2px 8px rgba(33,122,87,0.07);
+    }
+
+    .contact-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 20px;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-title {
+      color: var(--primary-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #c8e6cb;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #f8f9fa;
+      resize: none;
+    }
+    .contact-form textarea { min-height: 80px; }
+    .contact-form button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 6px;
+    }
+    .contact-form button:hover { background: var(--primary-dark); }
+
+    .contact-info {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .contact-info p { margin: 0; font-size: 1.03rem; }
+    .social-icons {
+      display: flex; gap: 12px; align-items: center; margin-top: 8px;
+    }
+    .social-icons a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--bg); color: var(--primary-dark);
+      border: 1px solid #e7e7e7; font-size: 21px;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #e7e7e7;
+      text-align: center;
+      padding: 26px 12px 13px;
+      font-size: 1rem;
+      margin-top: 28px;
+      border-radius: 20px 20px 0 0;
+    }
+    .footer-links {
+      margin: 15px 0 10px;
+    }
+    .footer-links a { color: #fff; margin: 0 12px; font-weight: 700; }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 80px;
+      z-index: 999;
+      background: #25D366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 34px;
+      box-shadow: 0 4px 14px rgba(60,72,88,.19);
+      transition: background 0.2s;
+    }
+    .whatsapp-float:hover { background: #1ebd5a; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about { flex-direction: column; gap: 18px; }
+      .navbar { flex-direction: column; gap: 14px; }
+      .navbar nav { margin-left: 0; }
+    }
+    @media (max-width: 700px) {
+      .section { padding: 38px 8px 26px; }
+      .hero { padding: 60px 3vw 70px; }
+      .about { padding: 18px; }
+      .testimonials { padding: 26px 5px 10px; }
+      .contact-section { padding: 18px 8px; }
+    }
+    @media (max-width: 430px) {
+      .hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.5rem; }
+      .about-text h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909769.png" alt="EcoTect Landscape logo">
+      </div>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#about">Sobre nosotros</a>
+        <a href="#galeria">Galería</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Jardinería & Paisajismo Profesional en Miami</h1>
+        <p>Transformamos y cuidamos tu jardín como si fuera nuestro. Mantenimiento, diseño paisajístico, podas, riego, fumigación y más. ¡Garantía de calidad, puntualidad y atención personalizada!</p>
+        <a class="cta-btn" href="#contacto">Solicitar Presupuesto</a>
+        <a class="cta-btn" style="background:#25d366;color:#fff" href="https://wa.me/17866374643?text=Hola,%20quiero%20cotización%20para%20mi%20jardín" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <!-- Servicios -->
+    <section class="section" id="servicios">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="section-desc">Soluciones a medida para jardines residenciales y comerciales.</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Mantenimiento de jardines">
+          <h3>Mantenimiento de Jardines</h3>
+          <p>Corte de césped, limpieza, abono y control de malezas. Jardines siempre verdes y saludables.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Paisajismo y diseño">
+          <h3>Paisajismo & Diseño</h3>
+          <p>Diseño, renovación y embellecimiento de áreas verdes. Proyectos únicos y adaptados a tu espacio.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Podas y tala controlada">
+          <h3>Podas y Tala</h3>
+          <p>Podas de árboles y arbustos, tala controlada y despeje de ramas peligrosas.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1466279931548-5d36bb0b5e11?auto=format&fit=crop&w=400&q=80" alt="Instalación y reparación de riego">
+          <h3>Riego Automático</h3>
+          <p>Instalación, ajuste y reparación de sistemas de riego para un jardín perfecto todo el año.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Fumigación y control de plagas">
+          <h3>Fumigación</h3>
+          <p>Fumigación y control ecológico de plagas y enfermedades en césped y plantas ornamentales.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=400&q=80" alt="Mulch y renovación de áreas verdes">
+          <h3>Mulch y Renovación</h3>
+          <p>Colocación de mulch, renovación de áreas secas y embellecimiento de parterres.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section class="section" id="about">
+      <div class="about">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Equipo de jardinería trabajando">
+        <div class="about-text">
+          <h2>Sobre EcoTect Landscape</h2>
+          <p>Somos una empresa familiar en Miami con más de 10 años de experiencia en jardinería y paisajismo. Nos apasiona crear y mantener espacios verdes que transmitan tranquilidad, belleza y valor a tu hogar o negocio. Nuestro equipo está formado por profesionales comprometidos, puntuales y atentos a cada detalle.</p>
+          <p>¡Déjanos cuidar tu jardín como si fuera nuestro!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section testimonials" id="testimonios">
+      <h2 class="testimonials-title">Lo que dicen nuestros clientes</h2>
+      <div class="testimonials-list">
+        <div class="testimonial">
+          Excelente servicio y mucha puntualidad. Mi jardín nunca se vio mejor.
+          <span class="author">— Ana P., Coral Gables</span>
+        </div>
+        <div class="testimonial">
+          Muy profesionales, atentos y responsables. ¡Recomiendo EcoTect 100%!
+          <span class="author">— Luis M., Kendall</span>
+        </div>
+        <div class="testimonial">
+          El diseño de mi jardín superó mis expectativas. Trabajo limpio y rápido.
+          <span class="author">— Marta S., Miami Beach</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="section gallery" id="galeria">
+      <h2 class="section-title">Galería de Trabajos</h2>
+      <div class="gallery-list">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Jardín residencial cuidado">
+        <img src="https://images.unsplash.com/photo-1466279931548-5d36bb0b5e11?auto=format&fit=crop&w=400&q=80" alt="Paisajismo en casa moderna">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Patio trasero verde">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Equipo de jardinería podando">
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section contact-section" id="contacto">
+      <h2 class="contact-title">Contáctanos</h2>
+      <div>¿Tienes alguna consulta o quieres pedir presupuesto? Completa el formulario o usa cualquiera de nuestros medios de contacto:</div>
+      <form class="contact-form" action="https://formspree.io/f/xeqybkye" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
+        <textarea name="mensaje" placeholder="Cuéntanos qué necesitas..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+      <div class="contact-info">
+        <div>
+          <p>📍 Miami, FL</p>
+          <p>📞 <a href="tel:+17866374643">(786) 637-4643</a></p>
+          <p>✉️ <a href="mailto:eliezergardening@gmail.com">eliezergardening@gmail.com</a></p>
+        </div>
+        <div>
+          <div class="social-icons">
+            <a href="https://wa.me/17866374643?text=Hola,%20quiero%20cotización%20para%20mi%20jardín" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="24"></a>
+            <a href="https://instagram.com/ecotect.landscape" target="_blank" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="24"></a>
+            <a href="https://calendly.com/albertodearmas100/30min" target="_blank" title="Reserva en Calendly"><img src="https://cdn-icons-png.flaticon.com/512/2965/2965358.png" alt="Calendly" width="24"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/17866374643?text=Hola,%20quiero%20cotización%20para%20mi%20jardín"
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="Contáctanos por WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="38" height="38">
+  </a>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a> |
+      <a href="#about">Sobre nosotros</a> |
+      <a href="#galeria">Galería</a> |
+      <a href="#testimonios">Testimonios</a> |
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div>
+      <small>&copy; 2025 EcoTect Landscape. Miami, FL. Todos los derechos reservados.</small>
+    </div>
+    <div style="margin-top:7px; font-size:0.9em;">
+      <a href="mailto:eliezergardening@gmail.com" style="color:#ffd600">eliezergardening@gmail.com</a> |
+      <a href="https://instagram.com/ecotect.landscape" style="color:#ffd600" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Tawk.to Chat (deja tu código aquí si deseas) -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/68ac4e23a3ffa419223bd585/1j3gh2et9';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+</body>
+</html>
